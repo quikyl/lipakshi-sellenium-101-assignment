@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - init: |
+      export LT_USERNAME=${LT_USERNAME}
+      export LT_ACCESS_KEY=${LT_ACCESS_KEY}
+      dotnet restore
+  - command: dotnet test --logger:"console;verbosity=detailed"
+
+vscode:
+  extensions:
+    - ms-dotnettools.csharp
